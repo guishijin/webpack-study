@@ -14,7 +14,8 @@ module.exports = {
         contentBase: "./public", // 本地服务器所加载的页面所在的目录
         historyApiFallback: true, // 不跳转
         inline: true, // 实时刷新
-        port: 18080
+        port: 18080,
+        hot: true
     },
 
     module: {
@@ -52,6 +53,7 @@ module.exports = {
         new webpack.BannerPlugin('版权所有，翻版必究! gsj '),
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html",
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
