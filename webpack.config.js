@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -48,6 +49,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.BannerPlugin('版权所有，翻版必究! gsj ')
+        new webpack.BannerPlugin('版权所有，翻版必究! gsj '),
+        new HtmlWebpackPlugin({
+            template: __dirname + "/app/index.tmpl.html",
+        })
     ]
 }
